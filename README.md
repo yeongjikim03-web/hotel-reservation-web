@@ -22,6 +22,6 @@ http://localhost:8080/프로젝트명/mainhome.jsp
 
 
 ## DB
--DB 포트번호 : 3306
--DB 계정 : root
--DB 비번 : root
+- DB 포트번호 : 3306
+- DB 계정 : root
+- DB 비번 : root
