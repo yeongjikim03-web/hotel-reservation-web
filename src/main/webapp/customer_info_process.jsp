@@ -100,7 +100,7 @@
 	
 	
 	    // 예약 시에 방 상태(0, 1) 변경하는 구문입니다. 오류 있으면 알려주세요.
-	    // 테스트 시에는 잘 됐는데 혹시 모르니 다시 테스트 부탁드립니다.
+	
 	    String updateRoom = "UPDATE room SET is_available = 0 WHERE room_number = ?";
 	    
 	    PreparedStatement pstmtRoom = conn.prepareStatement(updateRoom);
@@ -148,3 +148,4 @@
 %>
 </body>
 </html>
+
