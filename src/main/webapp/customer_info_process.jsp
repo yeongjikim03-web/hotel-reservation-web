@@ -35,7 +35,31 @@
 	Connection conn = DriverManager.getConnection(url, "root", "root");
 	
 	try {
-	
+		
+		String checkSql = "SELECT is_available FROM room WHERE room_number = ?";
+        PreparedStatement pstmtCheck = conn.prepareStatement(checkSql);
+        pstmtCheck.setString(1, room_number);
+        ResultSet rsCheck = pstmtCheck.executeQuery();
+        
+        if (rsCheck.next()) {
+            int isAvailable = rsCheck.getInt("is_available");
+            
+            if (isAvailable == 0) {
+%>
+                <script>
+                    alert("이미 예약된 객실입니다.");
+                    history.back(); 
+                </script>
+<%
+            
+                rsCheck.close();
+                pstmtCheck.close();
+                conn.close();
+                return;
+            }
+        }
+        rsCheck.close();
+        pstmtCheck.close();
 	    
 	    String customerInsert =
 	        "INSERT INTO customer (name, gender, phone_number, email) VALUES (?, ?, ?, ?)";
@@ -122,7 +146,5 @@
 	}
 
 %>
-
-<a href="mainhome.jsp"> 홈화면으로 돌아가기</a>
 </body>
 </html>
