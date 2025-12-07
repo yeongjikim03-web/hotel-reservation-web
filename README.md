@@ -19,3 +19,9 @@ http://localhost:8080/프로젝트명/mainhome.jsp
 - 예약 취소 시 `reservation` 테이블의 `status` 값이 `canceled`로 변경되며,
   동시에 `room` 테이블의 `is_available` 값이 1로 변경되어 다시 예약 가능 상태로 복구된다.
 - 마이페이지에서 사용자의 멤버십 정보와 고객 정보를 볼 수 있다.
+
+
+## DB
+-DB 포트번호 : 3306
+-DB 계정 : root
+-DB 비번 : root
