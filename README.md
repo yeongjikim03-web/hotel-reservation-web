@@ -25,3 +25,4 @@ http://localhost:8080/프로젝트명/mainhome.jsp
 - DB 포트번호 : 3306
 - DB 계정 : root
 - DB 비번 : root
+- hotel.sql 파일에는 테이블 생성문과 테스트용 INSERT 데이터가 포함되어 있습니다.
